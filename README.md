@@ -1,46 +1,46 @@
-Week 8 Assignment: MySQL Database Backup and Restore
+Week 8: MySQL Database Backup and Restore
 
-Student Name: Elicah Makari
+Student: Elicah Makari
 
-Question 1: Complete Database Backup
+Assignment Description
 
-Command:
+This assignment demonstrates MySQL database backup operations using the mysqldump command-line utility.
 
-mysqldump -u root -p sales > sales_backup.sql
+Question 1: Single Database Backup
 
-Explanation:
-
-This command creates a complete backup of the sales database. The -u option specifies the root username, -p prompts for the password, and the output is saved in sales_backup.sql.
-
-Regular backups protect data against accidental deletion, corruption and system failure.
-
-Question 2: Backing Up All Databases
+Backs up the sales database.
 
 Command:
 
-mysqldump -u root -p --all-databases > all_databases_backup.sql
+"mysqldump -u root -p -B sales > sales_backup.sql"
 
-Explanation:
+Question 2: All Databases Backup
 
-The --all-databases option exports every database on the MySQL server.
+Backs up all databases on the MySQL server.
 
-Backing up all databases before migration ensures that important information and database structures are preserved.
+Command:
+
+"mysqldump -u root -p -A > all_databases_backup.sql"
 
 Question 3: Data-Only Backup
 
+Backs up data from the sales database without table creation statements.
+
 Command:
 
-mysqldump -u root -p --no-create-info sales > sales_data_backup.sql
-
-Explanation:
-
-The --no-create-info option exports data without table creation statements.
-
-Data-only backups are useful when transferring records into existing database tables.
+"mysqldump -u root -p --no-create-info sales > sales_data_backup.sql"
 
 Learning Outcomes
 
-- Creating complete database backups.
-- Backing up all MySQL databases.
+- Creating MySQL database backups.
+- Backing up all databases.
 - Creating data-only backups.
-- Understanding database recovery and migration.
+- Understanding database recovery.
+- Understanding database migration.
+
+Technologies
+
+- MySQL
+- mysqldump
+- Git
+- GitHub
